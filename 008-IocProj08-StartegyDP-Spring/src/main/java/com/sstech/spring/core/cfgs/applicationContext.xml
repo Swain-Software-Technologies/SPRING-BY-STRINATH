@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+   <!--Dependent  class cfg -->
+   <bean id="dengg"  class="com.sstech.spring.core.component.DieselEngine"/>
+   <bean id="pengg"  class="com.sstech.spring.core.component.PetrolEngine"/>
+   
+   <!-- Target class cfg -->
+   <bean id="viechle"  class="com.sstech.spring.core.component.Viechle">
+       <!-- <property name="engine" ref="dengg"/> -->
+       <property name="engine"  ref="pengg"/>
+   </bean>
+
+</beans>
