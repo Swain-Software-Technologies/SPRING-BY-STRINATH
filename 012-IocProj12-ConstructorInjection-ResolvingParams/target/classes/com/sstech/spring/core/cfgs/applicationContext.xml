@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+   <!-- Bean cfg -->
+   <bean id="st"  class="com.sstech.spring.core.beans.Student">
+       <constructor-arg  value="raja" type="java.lang.String"/>
+        <constructor-arg value="1001" type="int"/>
+        <constructor-arg  value="89.90f"  type="float"/>
+   </bean>
+   
+   <bean id="mk"   class="com.sstech.spring.core.beans.Marks">
+       <constructor-arg value="90" index="2" />
+       <constructor-arg  value="20" index="0"/>
+        <constructor-arg  value="56" index="1"/>
+   </bean>
+   
+    <!-- Bean cfg -->
+   <bean id="st1"  class="com.sstech.spring.core.beans.Student">
+       <constructor-arg  value="raja"  name="name" index="1" type="java.lang.String"/>
+        <constructor-arg value="1001" name="sno" />
+        <constructor-arg  value="89.90f"  name="avg" />
+   </bean>
+   
+
+</beans>
