@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Daefault Bean Id -->
+	<!-- Dependent  Bean class cfg -->
+       <bean  class="java.util.Date"/>
+       
+       <bean  class="java.util.Date">
+          <property name="year"  value="110"/>
+          <property name="month"  value="10"/>
+          <property name="date"  value="20"/>
+       </bean>
+       
+       <!--Target Bean class cfg   -->
+       <bean  id="wmg"  class="com.sstech.spring.core.dbid.beans.WishMessageGenerator">
+          <property name="date"   ref="java.util.Date#0"/>  <!-- setter injection -->
+       </bean>
+       
+         <bean id="wmg1"   class="com.sstech.spring.core.dbid.beans.WishMessageGenerator">
+          <property name="date"   ref="java.util.Date#1"/>  <!-- setter injection -->
+       </bean>
+</beans>
