@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- Null Injection Configurtaion -->
+	<bean id="perInfo" class="com.sstech.spring.core.ni.beans.PersonalInfo">
+		<constructor-arg value="985632558962"/>
+		<constructor-arg name="" value="Ram"/>	
+		<constructor-arg name="doBirth"><null/></constructor-arg>
+		<constructor-arg name="doJoining">
+			<bean class="java.util.Date">
+				<property name="year" value="110"/>
+				<property name="month" value="10"/>
+				<property name="date" value="21"/>
+			</bean>
+		</constructor-arg>
+		<!-- <constructor-arg name="doJoining"><null/></constructor-arg> -->
+	</bean>
+</beans>
