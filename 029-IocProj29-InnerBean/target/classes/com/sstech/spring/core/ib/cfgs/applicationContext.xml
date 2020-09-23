@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+		
+		<bean id="bankCustomer" class="com.sstech.spring.core.ib.beans.BankCustomer">
+			<constructor-arg>
+				<bean class="com.sstech.spring.core.ib.beans.BankAccount">
+					<property name="accNumber" value="32405688905"/>
+					<property name="accHolderName" value="TRINATH"/>
+					<property name="balance" value="2500000"/>
+					<property name="NRIBankingEnabled" value="true"/>
+				</bean>
+			</constructor-arg>
+			<constructor-arg name="bankName" value="ICICI"/>
+		</bean>
+</beans>

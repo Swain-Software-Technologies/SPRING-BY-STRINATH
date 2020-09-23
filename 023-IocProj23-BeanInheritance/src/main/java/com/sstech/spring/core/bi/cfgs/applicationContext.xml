@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Parent Bean -->
+	<bean id="basePulsor" class="com.sstech.spring.core.bi.beans.Bike" abstract="true">
+		<property name="company" value="Bajaj"/>
+		<property name="model" value="Pulsor"/>
+		<property name="engineCC" value="150"/>
+		<property name="fuelTankCapacity" value="13"/>
+	</bean>
+	
+	<!-- Child Bean -->
+	 <bean id="rajaPulsor"  class="com.sstech.spring.core.bi.beans.Bike"  parent="basePulsor">
+                <property name="color"  value="red"/>
+               <property name="owner"  value="raja"/>
+               <property name="regdNo"  value="TSONEN8888"/>
+               <property name="engineNo"  value="1234455"/>
+   </bean>
+   
+    <bean id="raviPulsor"  class="com.sstech.spring.core.bi.beans.Bike"  parent="basePulsor">
+                <property name="color"  value="black"/>
+               <property name="owner"  value="ravi"/>
+               <property name="regdNo"  value="TSONEN8988"/>
+               <property name="engineNo"  value="12344454"/>
+   </bean>
+</beans>

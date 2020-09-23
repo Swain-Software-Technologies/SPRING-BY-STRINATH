@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="base1styrEngg" class="com.sstech.spring.core.cm.beans.EnggCourse" abstract="true">
+		<property name="subjects">
+			<list>
+				<value>Math</value>
+				<value>ED</value>
+				<value>Physics</value>
+				<value>Chemistry</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="ece1stYrEngg" class="com.sstech.spring.core.cm.beans.EnggCourse" parent="base1styrEngg">
+		<property name="subjects">
+			<list merge="true">
+				<value>C</value>
+				<value>DE</value>
+				<value>EDC</value>
+				<value>AE</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="cse1stYrEngg" class="com.sstech.spring.core.cm.beans.EnggCourse" parent="base1styrEngg">
+		<property name="subjects">
+			<list merge="true">
+				<value>C</value>
+				<value>OS</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

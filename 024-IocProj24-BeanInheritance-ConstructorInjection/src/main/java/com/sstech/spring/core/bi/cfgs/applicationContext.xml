@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Parent Bean -->
+	<bean id="basePulsor"  class="com.sstech.spring.core.bi.beans.Bike"  abstract="true">
+            <constructor-arg name="model"  value="pulsor"/>
+            <constructor-arg name="company"  value="Bajaj"/>
+            <constructor-arg name="engineCC"  value="150"/>
+            <constructor-arg name="fuelTankCapacity"  value="13"/>
+            <!-- <constructor-arg><null/></constructor-arg>
+            <constructor-arg><null/></constructor-arg>
+            <constructor-arg><null/></constructor-arg>
+            <constructor-arg><null/></constructor-arg> -->
+   </bean>
+	<!-- Child Bean -->
+	 <bean id="rajaPulsor"  class="com.sstech.spring.core.bi.beans.Bike"  parent="basePulsor">
+               <constructor-arg name="color" value="Red"/>
+               <constructor-arg name="owner" value="Raja"/>
+               <constructor-arg name="regdNo" value="TSONEN8888"/>
+               <constructor-arg name="engineNo" value="1234455"/>
+   </bean>
+   
+   <bean id="raviPulsor"  class="com.sstech.spring.core.bi.beans.Bike"  parent="basePulsor">
+                <constructor-arg name="color"  value="black"/>
+               <constructor-arg name="owner"  value="ravi"/>
+               <constructor-arg name="regNo"  value="TSONEN8988"/>
+               <constructor-arg name="engineNo"  value="1234454"/>
+   </bean>
+</beans>
