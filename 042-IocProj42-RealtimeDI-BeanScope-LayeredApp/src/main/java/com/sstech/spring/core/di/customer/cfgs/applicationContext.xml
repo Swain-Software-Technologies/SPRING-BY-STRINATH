@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+
+<!-- DataSource Configuration -->
+	<bean id="drds"  class="org.springframework.jdbc.datasource.DriverManagerDataSource" scope="singleton">
+	      <property name="driverClassName"  value="oracle.jdbc.driver.OracleDriver"/>
+	      <property name="url"  value="jdbc:oracle:thin:@localhost:1521:xe"/>
+	      <property name="username" value="SPRING_LOCAL_SCHEMA"/>
+	      <property name="password" value="swain123"/>
+   </bean>
+	
+	<!-- DAO class cfg -->
+   <bean id="custDAO"  class="com.sstech.spring.core.di.customer.dao.impl.CustomerDAOImpl" scope="singleton">
+       <constructor-arg  ref="drds"/>
+   </bean>
+   <!-- BO/Entity Class Configuration -->
+    <bean id="custBO" class="com.sstech.spring.core.di.customer.bo.CustomerEntity" scope="prototype">
+   
+   </bean>
+   
+   <!-- Cfg Service class -->
+   <bean id="custService"   class="com.sstech.spring.core.di.customer.service.impl.CustomerServiceImpl" scope="singleton">
+       <constructor-arg  ref="custDAO"/>
+       <constructor-arg ref="custBO"/>
+   </bean>
+   
+   <!-- DTO Class Config -->
+   <bean id="custDTO" class="com.sstech.spring.core.di.customer.dto.CustomerDTO" scope="prototype"/>
+   
+	<!-- VO Class Configuration -->  
+	<bean id="custVO" class="com.sstech.spring.core.di.customer.vo.CustomerVo" scope="prototype"/> 
+	
+   <!-- Cfg Controller  class -->
+   <bean id="controller"   class="com.sstech.spring.core.di.customer.controller.CustomerController" scope="singleton">
+      <constructor-arg  ref="custService"/>
+      <constructor-arg ref="custDTO"/>
+   </bean>
+  
+</beans>
