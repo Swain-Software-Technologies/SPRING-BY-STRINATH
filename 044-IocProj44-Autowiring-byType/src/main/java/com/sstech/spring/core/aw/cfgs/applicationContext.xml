@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- ========================byType======================= -->
+	 <bean id="tPlan"
+		class="com.sstech.spring.core.aw.beans.TourPlan">
+		<property name="places">
+			<array>
+				<value>Otty</value>
+				<value>Kudaikenal</value>
+				<value>MunnarHills</value>
+			</array>
+		</property>
+	</bean>
+	<bean id="tPlan1"
+		class="com.sstech.spring.core.aw.beans.TourPlan" primary="true">
+		<property name="places">
+			<array>
+				<value>Khurda</value>
+				<value>Usa</value>
+				<value>Uk</value>
+			</array>
+		</property>
+	</bean>
+	<bean id="travelAgent" class="com.sstech.spring.core.aw.beans.TravelAgent" autowire="byType"/>
+</beans>
